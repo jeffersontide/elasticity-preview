@@ -119,10 +119,8 @@ if __name__ == "__main__":
     rows = [0.01, 0.02, 0.05, 0.10]
     cols = [0.0, 0.001, 0.002, 0.01]
 
-    traces = [["k0.01_g0.00.html", "k0.010_g0.001.html", "k0.010_g0.002.html", "k0.01_g0.01.html"],
-              ["k0.02_g0.00.html", "k0.020_g0.001.html", "k0.020_g0.002.html", "k0.02_g0.01.html"],
-              ["k0.05_g0.00.html", "k0.050_g0.001.html", "k0.050_g0.002.html", "k0.05_g0.01.html"],
-              ["k0.10_g0.00.html", "k0.100_g0.001.html", "k0.100_g0.002.html", "k0.10_g0.01.html"]]
+    filenames = [["g{:.6f}_k{:.6f}.html".format(g_value, k_value) for k_value in rows] for g_value in cols]
+    print(filenames)
 
     a = Airium()
     a('<!DOCTYPE html>')
@@ -150,7 +148,7 @@ if __name__ == "__main__":
                         a.td(_t=x)
                         for j, y in enumerate(cols):
                             with a.td():
-                                t = traces[i][j]
+                                t = filenames[i][j]
                                 link = "tables/" + t
                                 a.a(href=link, _t="link")
 
