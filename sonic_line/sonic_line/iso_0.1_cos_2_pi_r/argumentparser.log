@@ -1,0 +1,4 @@
+-sim sonic_line -res 0.07 
+-res 0.07 -sim sonic_line -verbose true -radius 2.000000 -E 1.000000 -nu 0.500000 -h 0.020000 -nSteps 10 
+-sim sonic_line -res 0.07 
+-res 0.07 -sim sonic_line -verbose true -radius 2.000000 -E 1.000000 -nu 0.500000 -h 0.020000 -nSteps 10 
